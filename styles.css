@@ -46,12 +46,44 @@ body{
     text-decoration: none;
 }
 
+.main-content-img{
+    background-image: url('assets/images/image-web-3-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+main h1{
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.main-article-info p{
+    margin-top: -2vh;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+}
+
+.main-article-info button{
+    width: 55%;
+    height: 8vh;
+    background-color: hsl(5, 85%, 63%);
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: white;
+    font-family: Inter;
+    font-weight: 700;
+    margin-top: 2vh;
+    letter-spacing: 4px;
+
+}
+
 @media (max-width: 375px) {
 
 
     .header{
-        height: 15vh;
-        background-color: rgb(202, 202, 202);
+        height: 12vh;
     }
 
     .logo img{
@@ -92,6 +124,18 @@ body{
         opacity: 100%;
         transition: opacity 0.5s ease-in;
     }
+
+    .content-container{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main-content-img{
+        height: 45vh;
+    }
+
+
 
 
 }
