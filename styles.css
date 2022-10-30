@@ -12,7 +12,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 998;
+    z-index: 996;
 }
 
 .logo{
@@ -32,10 +32,20 @@ body{
     transition: background-image 0.25s ease-in;
 }
 
+.background-dimmer{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.329);
+    display: none;
+    z-index: 997;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .navbar{
     display: none;
-    opacity: 0%;
-    transition: opacity 0.5s ease-in;
+    z-index: 998;
 }
 
 .header nav ul li{
@@ -121,8 +131,6 @@ main h1{
 
     .active{
         display: flex;
-        opacity: 100%;
-        transition: opacity 0.5s ease-in;
     }
 
     .content-container{
@@ -185,14 +193,16 @@ main h1{
     .footer-element{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        max-height: fit-content;
         margin-bottom: 32px;
+        min-height: fit-content;
     }
 
     .footer-element img{
         width: 100%;
         height: 100%;
         background-color: white;
+        width: 100%;
+        height: auto;
         grid-column: 0 / 1;
         
 
@@ -213,13 +223,14 @@ main h1{
     .footer-element-info h4{
         margin-top: 8px;
         font-weight: 800;
-        font-size: 1rem;
+        font-size: 1.05rem;
         margin-bottom: 0;
     }
 
     .footer-element-info p{
-        font-size: 0.95rem;
+        font-size: 0.90rem;
         margin-bottom: 0;
+        line-height: 1.8rem;
     }
 
 
