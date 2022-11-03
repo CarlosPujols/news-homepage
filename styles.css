@@ -3,7 +3,7 @@
     font-family: Inter;
 }
 
-body{
+body{ 
     padding: 0;
     margin: 0;
 }
@@ -13,11 +13,22 @@ body{
     align-items: center;
     justify-content: space-between;
     z-index: 996;
+    width: calc(85% + 20px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
 }
 
-.logo{
-    margin-left: 5%;
-    
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar ul li{
+    margin-left: 36px;
+    color: white;
+    opacity: 70%;
 }
 
 .menu-button{
@@ -30,6 +41,7 @@ body{
     right: 5%;
     z-index: 999;
     transition: background-image 0.25s ease-in;
+    display: none;
 }
 
 .background-dimmer{
@@ -43,11 +55,6 @@ body{
     left: 0;
 }
 
-.navbar{
-    display: none;
-    z-index: 998;
-}
-
 .header nav ul li{
     list-style: none;
 }
@@ -56,28 +63,91 @@ body{
     text-decoration: none;
 }
 
+.header nav ul li a:hover{
+    color: hsl(5, 85%, 63%);
+}
+
+.header nav ul li a:visited{
+    color: black;
+}
+
+.global-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.content-container{
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+}
+
+.main-article{
+    max-height: 60vh;
+    display: grid;
+    grid-column: 1 / 3;
+    grid-row: 1 / -1;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding-right: 16px;
+}
+
+main{
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    max-height: 60vh;
+    margin-bottom: 64px;
+}
+
 .main-content-img{
     background-image: url('assets/images/image-web-3-desktop.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-    height: 100%;
+    background-size: cover;
+    min-width: 100%;
+    min-height: 38vh;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
 }
 
 main h1{
     font-weight: 800;
-    font-size: 2.5rem;
+    font-size: 4rem;
+    grid-area: b;
+    margin-top: 16px;
+    padding: 0;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
+
+.main-article-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 16px;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    padding-left: 16px;
 }
 
 .main-article-info p{
-    margin-top: -2vh;
+    margin-top: 0.2vh;
     font-size: 0.95rem;
     line-height: 1.5rem;
+
 }
 
 .main-article-info button{
     width: 55%;
-    height: 8vh;
+    height: 5vh;
     background-color: hsl(5, 85%, 63%);
     border: none;
     text-transform: uppercase;
@@ -86,19 +156,27 @@ main h1{
     font-family: Inter;
     font-weight: 700;
     margin-top: 2vh;
+    margin-bottom: 64px;
     letter-spacing: 4px;
+}
+
+.main-article-info button:hover{
+    background-color: black;
 }
 
 aside {
     width: 100%;
     background-color: hsl(240, 100%, 5%);
-    min-height: 60vh;
-    margin-left: auto;
     margin-right:auto;
     color: white;
     padding: 8px;
-    margin-top: 64px;
-    margin-bottom: 64px;
+    grid-column: 3 / -1;
+    grid-row: 1 / -1;
+    height: fit-content;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 aside h2{
@@ -122,6 +200,10 @@ aside h2{
     font-size: 1.2rem;
 }
 
+.sidebar-article a:hover{
+    color:hsl(35, 77%, 62%);
+}
+
 .sidebar-article p{
     font-size: 0.95rem;
     opacity: 60%;
@@ -136,11 +218,19 @@ aside hr{
     margin-top: 42px;
 }
 
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% + 20px);
+}
+
 .footer-element{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 32px;
     min-height: fit-content;
+    margin-right: 4px;
 }
 
 .footer-element img{
@@ -171,6 +261,10 @@ aside hr{
     margin-bottom: 0;
 }
 
+.footer-element-info h4:hover{
+    color: hsl(5, 85%, 63%);
+}
+
 .footer-element-info p{
     font-size: 0.85rem;
     margin-bottom: 0;
@@ -184,12 +278,23 @@ aside hr{
 
     .header{
         height: 12vh;
+        width: 100%;
+    }
+
+    .logo{
+        margin-left: 5%;
+        
     }
 
     .logo img{
         align-items: center;
         width: 55px;
         height: 30px;
+    }
+
+    .navbar{
+        display: none;
+        z-index: 998;
     }
 
     .header nav{
@@ -205,12 +310,17 @@ aside hr{
         margin-top: 20vh;
         padding: 0;
         margin-left: 24px;
+        display: block;
     }
 
     .header nav ul li{
         padding: 16px;
         font-family: Inter;
         font-weight: 400;
+    }
+
+    .menu-button{
+        display: block;
     }
 
     .close-menu{
@@ -223,16 +333,64 @@ aside hr{
         display: flex;
     }
 
-    .content-container{
+    .global-content{
         width: 92%;
+        display: block;
+    }
+
+    .content-container{
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
+        display: block;
+    }
+
+    main{
+        display: block;
+    }
+
+    main h1{
+        font-weight: 800;
+        font-size: 2.5rem;
+        padding-right: 0;
+        margin-top: 16px;
+    }
+
+    .main-article{
+        max-height: 100%;
+        display: block;
+        padding: 0;
     }
 
     .main-content-img{
-        height: 45vh;
+        height: fit-content;
         background-image: url('assets/images/image-web-3-mobile.jpg');
+        background-size: contain;
+        background-size: cover;
+
+
     }
+
+    .main-article-info{
+        padding: 0;
+    }
+
+    .main-article-info p{
+        margin-top: -2vh;
+    }
+
+    aside{
+        margin-top: 32px;
+        display: block;
+        margin-left: 0;
+    }
+
+    footer{
+        display: block;
+        width: 100%;
+        margin-top: 115vh;
+    }
+    
 
 }
 
